@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-coffee-50 text-coffee-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl font-extrabold text-coffee-800;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold transition-all duration-200 active:scale-95;
+  }
+  .btn-primary {
+    @apply btn bg-coffee-700 text-coffee-50 hover:bg-coffee-800 shadow-lg shadow-coffee-700/20;
+  }
+  .btn-outline {
+    @apply btn border-2 border-coffee-700 text-coffee-800 hover:bg-coffee-700 hover:text-coffee-50;
+  }
+}
+
+/* أنميشن ظهور خفيف للأقسام */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.7s ease both;
+}
