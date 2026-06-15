@@ -1,7 +1,8 @@
 // تهيئة Firebase — تُقرأ الإعدادات من متغيّرات البيئة (ملف .env).
-// لو لم تُضبط المفاتيح، يبقى db = null ويعمل الموقع بنظام محلي بديل (انظر orders.js).
+// لو لم تُضبط المفاتيح، تبقى db/auth = null ويعمل الموقع بنظام محلي بديل.
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
 
 const config = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,4 +15,9 @@ const config = {
 
 export const isFirebaseConfigured = Boolean(config.apiKey && config.projectId)
 
-export const db = isFirebaseConfigured ? getFirestore(initializeApp(config)) : null
+const app = isFirebaseConfigured ? initializeApp(config) : null
+export const db = app ? getFirestore(app) : null
+export const auth = app ? getAuth(app) : null
+
+// تحويل رقم العميل إلى إيميل داخلي لـFirebase Auth
+export const numberToEmail = (num) => `${String(num).trim()}@steel-oman.app`

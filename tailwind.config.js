@@ -4,38 +4,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        // لوحة صناعية داكنة: أسود مطفي + فولاذ/فحمي + لمسات معدنية
-        ink: {
-          950: '#060607',
-          900: '#0a0a0b',
-          850: '#0f0f11',
-          800: '#141417',
-          700: '#1b1b1f',
+        // لوحة دافئة بيج/كريمي/بني (شكل تطبيق القهوة)
+        cream: {
+          50: '#fdfaf5',
+          100: '#faf4ec',
+          200: '#f3e9da',
+          300: '#e8d8c3',
+          400: '#dcc4a6',
         },
-        charcoal: {
-          900: '#17181b',
-          800: '#1f2024',
-          700: '#2a2c31',
-          600: '#3a3d44',
-          500: '#4d5158',
-          400: '#6b7079',
-          300: '#8b9099',
+        latte: {
+          300: '#cbb294',
+          400: '#b9966f',
+          500: '#a87e54',
         },
-        copper: {
-          DEFAULT: '#b87333',
-          light: '#d08a45',
-          dark: '#8f5827',
+        coffee: {
+          400: '#9c7a5b',
+          500: '#7d5a3c',
+          600: '#6f4e37',
+          700: '#5a3e2b',
+          800: '#46301f',
+          900: '#3d2b1f',
         },
-        rust: '#c2502a',
-        silver: '#c9ccd1',
+        accent: '#c98a3c', // كراميل/ذهبي للتمييز
       },
       fontFamily: {
         sans: ['Almarai', 'Cairo', 'system-ui', 'sans-serif'],
         display: ['Cairo', 'Almarai', 'system-ui', 'sans-serif'],
       },
-      backgroundImage: {
-        'steel-sheen':
-          'linear-gradient(135deg, #2a2c31 0%, #3a3d44 25%, #1f2024 50%, #3a3d44 75%, #2a2c31 100%)',
+      boxShadow: {
+        soft: '0 10px 30px -12px rgba(111, 78, 55, 0.25)',
+        card: '0 6px 20px -8px rgba(111, 78, 55, 0.20)',
+      },
+      borderRadius: {
+        '2xl': '1.25rem',
+        '3xl': '1.75rem',
       },
     },
   },

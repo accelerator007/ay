@@ -6,12 +6,12 @@ import Menu from './components/Menu'
 import InstagramGrid from './components/InstagramGrid'
 import VisitUs from './components/VisitUs'
 import Footer from './components/Footer'
-import OrderModal from './components/OrderModal'
-import Cashier from './pages/Cashier'
+import Login from './pages/Login'
+import CustomerDashboard from './pages/CustomerDashboard'
+import Admin from './pages/Admin'
 
 export default function App() {
   const [route, setRoute] = useState(window.location.hash)
-  const [orderOpen, setOrderOpen] = useState(false)
 
   useEffect(() => {
     const onHash = () => setRoute(window.location.hash)
@@ -19,30 +19,22 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  // صفحة الكاشير (للموظفين): #/cashier
-  if (route.startsWith('#/cashier')) return <Cashier />
+  if (route.startsWith('#/login')) return <Login />
+  if (route.startsWith('#/account')) return <CustomerDashboard />
+  if (route.startsWith('#/admin')) return <Admin />
 
+  // الصفحة التعريفية العامة
   return (
-    <div className="min-h-screen bg-ink-900">
-      <Navbar onOrder={() => setOrderOpen(true)} />
+    <div className="min-h-screen bg-cream-100">
+      <Navbar />
       <main>
-        <Hero onOrder={() => setOrderOpen(true)} />
+        <Hero />
         <About />
-        <Menu onOrder={() => setOrderOpen(true)} />
+        <Menu />
         <InstagramGrid />
         <VisitUs />
       </main>
       <Footer />
-
-      {/* زر طلب عائم */}
-      <button
-        onClick={() => setOrderOpen(true)}
-        className="btn-metal fixed bottom-5 left-1/2 z-40 -translate-x-1/2 shadow-2xl shadow-ink-950 sm:bottom-6"
-      >
-        🛒 اطلب الآن
-      </button>
-
-      <OrderModal open={orderOpen} onClose={() => setOrderOpen(false)} />
     </div>
   )
 }

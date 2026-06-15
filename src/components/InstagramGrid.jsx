@@ -13,16 +13,16 @@ function IgIcon({ className = '' }) {
 
 export default function InstagramGrid() {
   return (
-    <section id="instagram" className="bg-ink-900 py-24 sm:py-32">
+    <section id="instagram" className="bg-cream-200 py-24 sm:py-32">
       <div className="container-px">
         <div className="flex flex-col items-center text-center">
           <span className="kicker">معرض إنستغرام</span>
-          <h2 className="section-title mt-5">من فنجاننا إلى حسابك</h2>
+          <h2 className="section-title mt-3">من فنجاننا إلى حسابك</h2>
           <a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
-            className="mt-3 inline-flex items-center gap-2 text-copper-light transition hover:text-copper"
+            className="mt-3 inline-flex items-center gap-2 font-bold text-coffee-700 transition hover:text-coffee-900"
           >
             <IgIcon className="h-5 w-5" />
             {INSTAGRAM_HANDLE}
@@ -36,18 +36,18 @@ export default function InstagramGrid() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
-              className="group relative aspect-square overflow-hidden rounded-md border border-charcoal-700"
+              className="group relative aspect-square overflow-hidden rounded-3xl shadow-card ring-1 ring-cream-300"
             >
               <img
                 src={img.url}
                 alt={img.alt}
                 loading="lazy"
-                className="h-full w-full object-cover grayscale-[35%] transition duration-500 group-hover:scale-110 group-hover:grayscale-0"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
               />
               {/* تراكب يظهر عند المرور */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-ink-950/0 opacity-0 transition duration-300 group-hover:bg-ink-950/75 group-hover:opacity-100">
-                <IgIcon className="h-9 w-9 text-copper-light" />
-                <span className="text-sm font-bold text-silver">شاهده على إنستغرام</span>
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-coffee-900/0 opacity-0 transition duration-300 group-hover:bg-coffee-900/70 group-hover:opacity-100">
+                <IgIcon className="h-9 w-9 text-cream-50" />
+                <span className="text-sm font-bold text-cream-50">شاهده على إنستغرام</span>
               </div>
             </a>
           ))}
