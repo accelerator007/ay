@@ -1,75 +1,59 @@
-import { useLang } from '../context/LanguageContext'
-
-const PHONE = '97522597'
-const INSTAGRAM = 'https://instagram.com'
-const MAPS = 'https://maps.google.com/?q=9P7X%2BRM+Sohar'
+import { BG } from '../data/site'
 
 export default function Hero() {
-  const { t } = useLang()
-
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-coffee-800 via-coffee-900 to-steel-900 pt-16"
+      className="relative flex min-h-screen items-center overflow-hidden"
     >
-      {/* خلفية زخرفية */}
-      <div className="pointer-events-none absolute inset-0 opacity-20">
-        <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-gold blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-coffee-400 blur-3xl" />
+      {/* خلفية صناعية بانورامية */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('${BG.hero}')` }}
+        aria-hidden="true"
+      />
+      {/* تراكب داكن لتباين النص */}
+      <div className="absolute inset-0 bg-gradient-to-l from-ink-950/95 via-ink-950/75 to-ink-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
+
+      <div className="container-px relative py-28">
+        <div className="fade-up max-w-2xl">
+          <span className="kicker">قهوة مختصة · السويق</span>
+          <h1 className="mt-6 text-5xl font-black leading-[1.1] text-silver sm:text-6xl lg:text-7xl">
+            الدقة في
+            <span className="block text-copper-light">كل رشفة</span>
+          </h1>
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-charcoal-300">
+            في Steel Oman نتعامل مع القهوة كهندسة دقيقة — حبوب مختارة، جرعات محسوبة بالغرام،
+            واستخلاص لا يترك شيئًا للصدفة.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a href="#menu" className="btn-metal">استكشف القائمة ←</a>
+            <a href="#visit" className="btn-ghost">موقعنا</a>
+          </div>
+
+          <div className="mt-14 flex flex-wrap items-center gap-8 border-t border-charcoal-700 pt-6 text-charcoal-300">
+            <div>
+              <div className="text-2xl font-black text-silver">18g</div>
+              <div className="text-xs tracking-wider">جرعة الإسبريسو</div>
+            </div>
+            <div className="h-9 w-px bg-charcoal-600" />
+            <div>
+              <div className="text-2xl font-black text-silver">93°</div>
+              <div className="text-xs tracking-wider">حرارة الاستخلاص</div>
+            </div>
+            <div className="h-9 w-px bg-charcoal-600" />
+            <div>
+              <div className="text-2xl font-black text-silver">V60</div>
+              <div className="text-xs tracking-wider">تحضير يدوي</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="container-px relative grid items-center gap-10 py-16 lg:grid-cols-2">
-        <div className="fade-up text-coffee-50">
-          <span className="inline-block rounded-full bg-coffee-50/10 px-4 py-1.5 text-sm font-bold text-gold ring-1 ring-gold/30">
-            {t('hero.kicker')}
-          </span>
-          <h1 className="mt-6 text-5xl font-black leading-tight sm:text-6xl lg:text-7xl">
-            {t('hero.title')}
-          </h1>
-          <p className="mt-5 max-w-md text-lg text-coffee-100/90">{t('hero.subtitle')}</p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href={MAPS} target="_blank" rel="noreferrer" className="btn bg-gold text-coffee-900 hover:brightness-110">
-              📍 {t('hero.cta.directions')}
-            </a>
-            <a href={`tel:${PHONE}`} className="btn border-2 border-coffee-50/40 text-coffee-50 hover:bg-coffee-50/10">
-              📞 {t('hero.cta.call')}
-            </a>
-            <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="btn border-2 border-coffee-50/40 text-coffee-50 hover:bg-coffee-50/10">
-              ◎ {t('hero.cta.instagram')}
-            </a>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-6">
-            <div className="flex items-center gap-2">
-              <span className="text-3xl font-black text-gold">4.4</span>
-              <div className="flex flex-col leading-tight">
-                <span className="text-gold">★★★★☆</span>
-                <span className="text-xs text-coffee-100/70">117 {t('hero.reviews')}</span>
-              </div>
-            </div>
-            <div className="h-10 w-px bg-coffee-50/20" />
-            <div className="flex flex-col leading-tight">
-              <span className="text-2xl font-black text-coffee-50">2–4 <span className="text-base">ر.ع.</span></span>
-              <span className="text-xs text-coffee-100/70">{t('hero.price')}</span>
-            </div>
-          </div>
-
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-green-500/15 px-4 py-2 text-sm font-bold text-green-300 ring-1 ring-green-400/30">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-            {t('hero.open')}
-          </div>
-        </div>
-
-        {/* بطاقة فنجان */}
-        <div className="fade-up hidden justify-center lg:flex">
-          <div className="relative grid h-80 w-80 place-items-center rounded-[2.5rem] bg-coffee-50/5 ring-1 ring-coffee-50/15 backdrop-blur">
-            <span className="text-[10rem] drop-shadow-2xl">☕</span>
-            <span className="absolute bottom-6 rounded-full bg-coffee-50/10 px-5 py-2 text-lg font-extrabold tracking-[0.3em] text-gold">
-              STEEL
-            </span>
-          </div>
-        </div>
+      {/* مؤشر تمرير */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-charcoal-400">
+        <span className="text-2xl">⌄</span>
       </div>
     </section>
   )

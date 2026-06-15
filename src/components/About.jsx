@@ -1,27 +1,49 @@
-import { useLang } from '../context/LanguageContext'
+import { BG } from '../data/site'
 
 export default function About() {
-  const { t } = useLang()
-
-  const stats = [
-    { value: '4.4', label: t('about.stat.rating'), sub: '117 ' + t('about.stat.reviews') },
-    { value: '12', label: t('about.stat.hours'), sub: t('about.stat.hours.label') },
-    { value: '2–4', label: 'ر.ع. / OMR', sub: t('hero.price') },
-  ]
-
   return (
-    <section id="about" className="bg-coffee-50 py-20 sm:py-28">
-      <div className="container-px grid items-center gap-12 lg:grid-cols-2">
+    <section id="about" className="relative overflow-hidden py-24 sm:py-32">
+      {/* خلفية ماكرو لحبوب البن */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-25"
+        style={{ backgroundImage: `url('${BG.about}')` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-ink-900/85" />
+
+      <div className="container-px relative grid items-center gap-14 lg:grid-cols-2">
         <div>
-          <h2 className="section-title">{t('about.title')}</h2>
-          <p className="mt-6 text-lg leading-relaxed text-coffee-700">{t('about.body')}</p>
+          <span className="kicker">عن المقهى</span>
+          <h2 className="section-title mt-5">حيث يلتقي الفولاذ بالقهوة</h2>
+          <p className="mt-6 text-lg leading-relaxed text-charcoal-300">
+            وُلد Steel Oman من فكرة بسيطة: أن تكون القهوة المختصة دقيقة كقطعة فولاذ مصقولة.
+            كل كوب يمرّ بمعايير صارمة — من اختيار الأصل إلى الطحن والوزن ودرجة الحرارة.
+          </p>
+          <p className="mt-4 leading-relaxed text-charcoal-400">
+            نمزج هذه الدقة الحديثة بكرم الضيافة العُمانية الأصيلة: روح <span className="text-copper-light font-bold">الدلّة</span> والقهوة
+            العُمانية حاضرة في كل تفصيل، بأسلوب صناعي معاصر يليق بالسويق.
+          </p>
+
+          {/* عنصر ثقافي عُماني مدمج */}
+          <div className="mt-8 flex items-center gap-4 steel-card p-5">
+            <span className="text-4xl">☕</span>
+            <div>
+              <div className="font-bold text-silver">ضيافة عُمانية · دقة فولاذية</div>
+              <div className="text-sm text-charcoal-400">الدلّة العُمانية تلتقي بمعايير القهوة المختصة</div>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
-          {stats.map((s) => (
-            <div key={s.label} className="rounded-2xl bg-white p-5 text-center shadow-sm ring-1 ring-coffee-100">
-              <div className="text-3xl font-black text-coffee-800 sm:text-4xl">{s.value}</div>
-              <div className="mt-1 text-sm font-bold text-coffee-600">{s.label}</div>
-              <div className="text-xs text-coffee-400">{s.sub}</div>
+
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { v: '100%', l: 'حبوب مختصة' },
+            { v: '٪٪', l: 'وزن دقيق بالغرام', alt: '±0.1g' },
+            { v: 'السويق', l: 'موقعنا في عُمان' },
+            { v: '٢٤/٧', l: 'شغف بالتحضير' },
+          ].map((s, i) => (
+            <div key={i} className="steel-card flex flex-col items-center justify-center p-7 text-center">
+              <div className="text-3xl font-black text-copper-light">{s.alt ?? s.v}</div>
+              <div className="mt-2 text-sm text-charcoal-300">{s.l}</div>
             </div>
           ))}
         </div>

@@ -7,7 +7,14 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-coffee-50 text-coffee-900 font-sans antialiased;
+    @apply bg-ink-900 text-silver font-sans antialiased;
+  }
+  /* عناوين بخط Cairo العريض للطابع الصناعي */
+  h1, h2, h3 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-copper text-ink-900;
   }
 }
 
@@ -16,24 +23,44 @@
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
   }
   .section-title {
-    @apply text-3xl sm:text-4xl font-extrabold text-coffee-800;
+    @apply text-3xl font-extrabold tracking-tight text-silver sm:text-4xl;
   }
+  .kicker {
+    @apply inline-block text-sm font-bold uppercase tracking-[0.35em] text-copper;
+  }
+  /* زر معدني بحدّ نحاسي وتوهّج عند المرور */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold transition-all duration-200 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3.5 font-bold transition-all duration-300 active:scale-95;
   }
-  .btn-primary {
-    @apply btn bg-coffee-700 text-coffee-50 hover:bg-coffee-800 shadow-lg shadow-coffee-700/20;
+  .btn-metal {
+    @apply btn border border-copper bg-copper/10 text-copper-light hover:bg-copper hover:text-ink-900 hover:shadow-[0_0_28px_-6px] hover:shadow-copper;
   }
-  .btn-outline {
-    @apply btn border-2 border-coffee-700 text-coffee-800 hover:bg-coffee-700 hover:text-coffee-50;
+  .btn-ghost {
+    @apply btn border border-charcoal-600 text-silver hover:border-silver hover:bg-charcoal-800;
+  }
+  /* بطاقة فولاذية */
+  .steel-card {
+    @apply rounded-md border border-charcoal-700 bg-charcoal-900/70 backdrop-blur;
   }
 }
 
-/* أنميشن ظهور خفيف للأقسام */
+@layer utilities {
+  /* تراكب داكن للخلفيات الصورية */
+  .overlay-dark::before {
+    content: '';
+    @apply absolute inset-0 bg-ink-950/80;
+  }
+  /* خط معدني فاصل */
+  .hairline {
+    @apply h-px w-full bg-gradient-to-l from-transparent via-charcoal-600 to-transparent;
+  }
+}
+
+/* أنميشن ظهور خفيف */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(26px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .fade-up {
-  animation: fadeUp 0.7s ease both;
+  animation: fadeUp 0.8s ease both;
 }
