@@ -26,7 +26,7 @@ export const menu = [
     items: [
       { name: 'V60', note: 'بن : ماء — 18g : 300ml', price: 3.0 },
       { name: 'كمكس', note: 'دفعة مزدوجة · 25g', price: 3.5 },
-      { name: 'آيروبريس', note: 'استخلاص نظيف · 14.2g', price: 3.0 },
+      { name: 'آيروبريس', note: 'طعم نقي · 14.2g', price: 3.0 },
     ],
   },
   {

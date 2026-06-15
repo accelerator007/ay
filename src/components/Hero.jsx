@@ -24,8 +24,8 @@ export default function Hero() {
             <span className="block text-copper-light">كل رشفة</span>
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-charcoal-300">
-            في Steel Oman نتعامل مع القهوة كهندسة دقيقة — حبوب مختارة، جرعات محسوبة بالغرام،
-            واستخلاص لا يترك شيئًا للصدفة.
+            في ستيل عُمان نحضّر قهوتك بحبّ وعناية — حبوب مختارة بعناية، وكل كوب
+            نُعدّه ليمنحك لحظة هادئة ونكهة تبقى في بالك.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
             <a href="#menu" className="btn-metal">استكشف القائمة ←</a>
@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="h-9 w-px bg-charcoal-600" />
             <div>
               <div className="text-2xl font-black text-silver">93°</div>
-              <div className="text-xs tracking-wider">حرارة الاستخلاص</div>
+              <div className="text-xs tracking-wider">حرارة مثالية</div>
             </div>
             <div className="h-9 w-px bg-charcoal-600" />
             <div>

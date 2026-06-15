@@ -6,7 +6,7 @@ export default function Menu() {
       <div className="container-px">
         <div className="text-center">
           <span className="kicker">القائمة</span>
-          <h2 className="section-title mt-5">مصنوعة بدقّة</h2>
+          <h2 className="section-title mt-5">قائمتنا المختارة بعناية</h2>
           <p className="mt-3 text-sm text-charcoal-400">الأسعار بالريال العُماني (ر.ع.) · القائمة قابلة للتحديث</p>
         </div>
 
