@@ -8,7 +8,7 @@ const links = [
   { href: '#visit', label: 'موقعنا' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onOrder }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -51,6 +51,12 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={onOrder}
+            className="rounded-sm bg-copper px-4 py-2 text-sm font-bold text-ink-900 transition hover:bg-copper-light"
+          >
+            اطلب الآن
+          </button>
           <a
             href={INSTAGRAM_URL}
             target="_blank"

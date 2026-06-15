@@ -30,6 +30,7 @@ export default function Footer() {
         <div className="text-xs text-charcoal-500">
           © {year} Steel Oman · جميع الحقوق محفوظة
         </div>
+        <a href="#/cashier" className="text-[11px] text-charcoal-600 transition hover:text-copper">دخول الكاشير</a>
       </div>
     </footer>
   )

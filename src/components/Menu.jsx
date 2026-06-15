@@ -1,6 +1,6 @@
 import { menu } from '../data/menu'
 
-export default function Menu() {
+export default function Menu({ onOrder }) {
   return (
     <section id="menu" className="relative bg-ink-850 py-24 sm:py-32">
       <div className="container-px">
@@ -56,6 +56,10 @@ export default function Menu() {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <button onClick={onOrder} className="btn-metal">🛒 اطلب من طاولتك</button>
         </div>
       </div>
     </section>

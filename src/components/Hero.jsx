@@ -1,6 +1,6 @@
 import { BG } from '../data/site'
 
-export default function Hero() {
+export default function Hero({ onOrder }) {
   return (
     <section
       id="home"
@@ -28,8 +28,8 @@ export default function Hero() {
             نُعدّه ليمنحك لحظة هادئة ونكهة تبقى في بالك.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <a href="#menu" className="btn-metal">استكشف القائمة ←</a>
-            <a href="#visit" className="btn-ghost">موقعنا</a>
+            <button onClick={onOrder} className="btn-metal">🛒 اطلب الآن</button>
+            <a href="#menu" className="btn-ghost">استكشف القائمة ←</a>
           </div>
 
           <div className="mt-14 flex flex-wrap items-center gap-8 border-t border-charcoal-700 pt-6 text-charcoal-300">
