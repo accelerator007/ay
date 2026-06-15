@@ -1,0 +1,13 @@
+# إعداد نشر Netlify
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# دعم التنقّل (يعيد كل المسارات إلى index.html)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
