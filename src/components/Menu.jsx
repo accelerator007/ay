@@ -7,7 +7,7 @@ export default function Menu() {
         <div className="text-center">
           <span className="kicker">القائمة</span>
           <h2 className="section-title mt-5">قائمتنا المختارة بعناية</h2>
-          <p className="mt-3 text-sm text-charcoal-400">الأسعار بالريال العُماني (ر.ع.) · القائمة قابلة للتحديث</p>
+          <p className="mt-3 text-sm text-charcoal-400">جميع الأسعار بالريال العُماني (ر.ع.)</p>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -45,6 +45,7 @@ export default function Menu() {
                   <li key={item.name} className="flex items-start justify-between gap-3">
                     <div>
                       <div className="font-bold text-silver">{item.name}</div>
+                      {item.en && <div className="text-xs text-charcoal-400">{item.en}</div>}
                       {item.note && <div className="text-xs text-charcoal-400">{item.note}</div>}
                     </div>
                     <span className="whitespace-nowrap font-extrabold text-copper-light">
